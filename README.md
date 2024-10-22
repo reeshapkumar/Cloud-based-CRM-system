@@ -1,4 +1,4 @@
-# Cloud Based Customer Relationship Management(CRM) System
+# Cloud Based CRM(Customer Relationship Management) System
 
 Creating a cloud-based Customer Relationship Management (CRM) system is a complex process that involves multiple stages. This project will allow you to manage customer data, automate marketing, and streamline sales operations using cloud infrastructure. Here are the steps involved:
 
