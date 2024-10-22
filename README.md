@@ -29,12 +29,12 @@ This repository contains the source code for CRM system and configuration files 
 ---**Customer Support:** Add ticketing or helpdesk functionality.
 ---**Reporting & Analytics:** Provide dashboards and reports on customer metrics and sales performance.
 
-# 5. Implement Cloud Infrastructure
+**5. Implement Cloud Infrastructure**
 
-**Set up Cloud Servers:** Use cloud computing services to host the application.
-**Storage Solutions:** Implement scalable cloud storage for customer data.
-**Backup & Recovery:** Establish cloud-based backup and disaster recovery plans.
-**Serverless or Containerization:** Use serverless architecture (AWS Lambda) or containers (Docker, Kubernetes) to scale automatically.
+---**Set up Cloud Servers:** Use cloud computing services to host the application.
+---**Storage Solutions:** Implement scalable cloud storage for customer data.
+---**Backup & Recovery:** Establish cloud-based backup and disaster recovery plans.
+---**Serverless or Containerization:** Use serverless architecture (AWS Lambda) or containers (Docker, Kubernetes) to scale automatically.
 
 **6. Integration and Automation**
 
