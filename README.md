@@ -2,11 +2,11 @@
 
 This repository contains the source code for CRM system and configuration files to deploy a Cloud based system, Creating a cloud-based CRM system involves several stages, from planning to implementation. Here are the key steps:
 
-# 1. Requirement Gathering and Planning
+**1. Requirement Gathering and Planning**
 
-**Define Objectives:** Identify the goals for the CRM, such as improving sales, customer retention, or support efficiency.
-**Identify Users:** Determine who will use the system (e.g., sales teams, support teams).
-**Choose Features:** List necessary features like contact management, sales automation, customer support, marketing tools, and reporting.
+---**Define Objectives:** Identify the goals for the CRM, such as improving sales, customer retention, or support efficiency.
+---**Identify Users:** Determine who will use the system (e.g., sales teams, support teams).
+---**Choose Features:** List necessary features like contact management, sales automation, customer support, marketing tools, and reporting.
 
 # 2. Choose the Technology Stack
 
