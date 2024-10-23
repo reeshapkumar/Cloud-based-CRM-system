@@ -6,8 +6,7 @@ Here's a step-by-step guide to creating the CRM system, along with code snippets
 
 **Project Structure**
 
-``go
-Copy code
+```go
 cloud-crm-system/
 ├── backend/
 │   ├── Dockerfile
@@ -18,6 +17,8 @@ cloud-crm-system/
 │   ├── routes/
 │   │   └── customers.js
 │   └── .env
+```
+```
 ├── frontend/
 │   ├── Dockerfile
 │   ├── package.json
@@ -28,7 +29,7 @@ cloud-crm-system/
 │   │   ├── App.js
 │   │   └── index.js
 └── docker-compose.yml
-``
+```
 
 **Step 1: Backend Setup**
 
@@ -36,30 +37,26 @@ cloud-crm-system/
 
 **Create backend directory and navigate to it:**
 
-``bash
-Copy code
+```bash
 mkdir backend
 cd backend
-``
+```
 
 **Initialize a Node.js project:**
 
-``bash
-Copy code
+```bash
 npm init -y
-``
+```
 
 **Install necessary dependencies:**
 
-``bash
-Copy code
+```bash
 npm install express mongoose dotenv cors body-parser
-``
+```
 
 **Create server.js:**
 
-``javascript
-Copy code
+```javascript
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -82,9 +79,11 @@ app.use('/api/customers', customerRoutes);
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-Create the MongoDB model for customers:
-javascript
-Copy code
+```
+
+**Create the MongoDB model for customers:**
+
+```javascript
 
 const mongoose = require('mongoose');
 
@@ -158,18 +157,17 @@ router.delete('/:id', async (req, res) => {
     }
 });
 module.exports = router;
+```
 
 **Create a .env file to store environment variables:**
 
-``bash
-Copy code
+```bash
 MONGO_URI=mongodb://mongo:27017/crm
-``
+```
 
 **Create Dockerfile for Backend:**
 
-``dockerfile
-Copy code
+```dockerfile
 backend/Dockerfile
 FROM node:14
 
@@ -183,7 +181,7 @@ COPY . .
 EXPOSE 5000
 
 CMD ["node", "server.js"]
-``
+```
 
 **Step 2: Frontend Setup**
 
@@ -191,30 +189,26 @@ CMD ["node", "server.js"]
 
 **Create frontend directory and navigate to it:**
 
-``bash
-Copy code
+```bash
 mkdir ../frontend
 cd ../frontend
-``
+```
 
 **Create a React app:**
 
-``bash
-Copy code
+```bash
 npx create-react-app .
-``
+```
 
 **Install Axios for API requests:**
 
-``bash
-Copy code
+```bash
 npm install axios
-``
+```
 
 **Create CustomerForm and CustomerList components:**
 
-``javascript
-Copy code
+```javascript
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -283,10 +277,9 @@ const CustomerForm = () => {
 };
 
 export default CustomerForm;
-``
+```
 
-``javascript
-Copy code
+```javascript
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -317,12 +310,11 @@ const CustomerList = () => {
 };
 
 export default CustomerList;
-``
+```
 
 **Update App.js to include components:**
 
-``javascript
-Copy code
+```javascript
 import React from 'react';
 import CustomerForm from './components/CustomerForm';
 import CustomerList from './components/CustomerList';
@@ -338,12 +330,11 @@ function App() {
 }
 
 export default App;
-``
+```
 
 **Create Dockerfile for Frontend:**
 
-``dockerfile
-Copy code
+```dockerfile
 FROM node:14 as build
 
 WORKDIR /app
@@ -357,14 +348,13 @@ FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-``
+```
 
 **Step 3: Docker Compose Setup**
 
 **A. Create docker-compose.yml**
 
-``yaml
-Copy code
+```yaml
 version: '3.8'
 
 services:
@@ -393,68 +383,61 @@ services:
 
 volumes:
   mongo-data:
-``
+```
 
 **Step 4: Running the Application**
 
 **Navigate to the root directory of your project:**
 
-``bash
-Copy code
+```bash
 cd cloud-crm-system
-``
+```
 
 **Run Docker Compose:**
 
-``bash
-Copy code
+```bash
 docker-compose up --build
-``
+```
 
 **Access the application:**
 
-``Frontend: http://localhost:3000
+```Frontend: http://localhost:3000
 Backend: http://localhost:5000/api/customers
-``
+```
 
 **Step 5: Deploying to the Cloud**
 You can deploy the application to a cloud platform like Heroku or AWS. Below are simplified deployment steps using Heroku.
 
 **Log in to Heroku:**
 
-``bash
-Copy code
+```bash
 heroku login
-``
+```
 
 **Create a Heroku app:**
 
-``bash
-Copy code
+```bash
 heroku create my-crm-system
-``
+```
 
 **Push the code to Heroku:**
 
-``bash
-Copy code
+```bash
 heroku container:push web
 heroku container:release web**
-``
+```
 
 **Set environment variables:**
 
-``bash
-Copy code
+```bash
 heroku config:set MONGO_URI=<your-mongo-uri>
-``
+```
 
 **Open your application:**
 
-``bash
-Copy code
+```bash
 heroku open
-``
+```
 
 **Conclusion**
 
